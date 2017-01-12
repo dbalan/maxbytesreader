@@ -1,5 +1,7 @@
 # MaxBytesReader
 
+[![CircleCI](https://circleci.com/gh/dbalan/maxbytesreader.svg?style=svg)](https://circleci.com/gh/dbalan/maxbytesreader)
+
 Throw an error if reader response is bigger than a threshould.
 
 example:

@@ -7,7 +7,7 @@ import (
 
 // Throws an error if the reader is bigger than limit.
 
-var SIZEEXCEEDED = errors.New("http: response too big")
+var SizeExceededErr = errors.New("http: response too big")
 
 type MaxBytesReader struct {
 	io.ReadCloser       // reader object
@@ -20,7 +20,7 @@ func NewMaxBytesReader(r io.ReadCloser, limit int64) *MaxBytesReader {
 
 func (b *MaxBytesReader) Read(p []byte) (n int, err error) {
 	if b.N <= 0 {
-		return 0, SIZEEXCEEDED
+		return 0, SizeExceededErr
 	}
 
 	if int64(len(p)) > b.N {
